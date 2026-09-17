@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TiffinTrack</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         LANDING PAGE
+    ====================================================== -->
+
+    <section id="landing">
+
+        <nav class="navbar">
+
+            <div class="logo">
+                🍱 TiffinTrack
+            </div>
+
+            <div class="navButtons">
+
+                <button
+                    class="textButton"
+                    onclick="showLogin()">
+                    Login
+                </button>
+
+                <button
+                    class="primary"
+                    onclick="showRegister()">
+                    Get Started
+                </button>
+
+            </div>
+
+        </nav>
+
+
+        <div class="hero">
+
+            <div class="heroText">
+
+                <div class="tag">
+                    HOME-STYLE TIFFIN MANAGEMENT
+                </div>
+
+                <h1>
+                    Manage your tiffin
+                    <span>business smarter.</span>
+                </h1>
+
+                <p>
+                    TiffinTrack helps home-style lunch delivery
+                    businesses manage subscriptions, pauses,
+                    transfers, customers and monthly bills
+                    in one simple place.
+                </p>
+
+                <div class="heroButtons">
+
+                    <button
+                        class="primary big"
+                        onclick="showRegister()">
+                        Start Managing →
+                    </button>
+
+                    <button
+                        class="secondary big"
+                        onclick="showLogin()">
+                        Login
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="heroCard">
+
+                <div class="miniHeader">
+
+                    <span>
+                        Today's Overview
+                    </span>
+
+                    <span>
+                        ● Live
+                    </span>
+
+                </div>
+
+                <div class="overviewNumber">
+                    128
+                </div>
+
+                <div class="overviewText">
+                    Active Tiffin Customers
+                </div>
+
+                <div class="miniStats">
+
+                    <div>
+                        <strong>112</strong>
+                        <span>Active</span>
+                    </div>
+
+                    <div>
+                        <strong>16</strong>
+                        <span>Paused</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="features">
+
+            <div class="feature">
+
+                <div class="featureIcon">
+                    📋
+                </div>
+
+                <h3>
+                    Easy Subscriptions
+                </h3>
+
+                <p>
+                    Keep customer plans and details organised.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="featureIcon">
+                    ⏸️
+                </div>
+
+                <h3>
+                    Pause & Resume
+                </h3>
+
+                <p>
+                    Handle travel, festivals and temporary pauses.
+                </p>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="featureIcon">
+                    💰
+                </div>
+
+                <h3>
+                    Pro-Rated Billing
+                </h3>
+
+                <p>
+                    Calculate monthly bills based on served days.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <section class="audience">
+
+            <h2>
+                Built for home-style food businesses
+            </h2>
+
+            <p>
+                TiffinTrack is designed for small tiffin,
+                lunchbox and home-food delivery businesses
+                that want to reduce manual customer tracking.
+            </p>
+
+        </section>
+
+
+        <section class="nextFeatures">
+
+            <h2>
+                What's coming next?
+            </h2>
+
+            <div class="nextGrid">
+
+                <div>
+                    💳
+
+                    <h3>
+                        Online Payments
+                    </h3>
+
+                    <p>
+                        Collect monthly payments digitally.
+                    </p>
+                </div>
+
+
+                <div>
+                    🔔
+
+                    <h3>
+                        Delivery Notifications
+                    </h3>
+
+                    <p>
+                        Notify customers when their lunch
+                        delivery is due.
+                    </p>
+                </div>
+
+
+                <div>
+                    🔄
+
+                    <h3>
+                        Subscription Transfer
+                    </h3>
+
+                    <p>
+                        Transfer an active subscription to
+                        another customer mid-cycle.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </section>
+
+
+    <!-- =====================================================
+         AUTHENTICATION
+    ====================================================== -->
+
+    <section id="auth" class="hidden">
+
+        <div class="authBox">
+
+            <div class="authLogo">
+                🍱
+            </div>
+
+            <h2 id="authTitle">
+                Login
+            </h2>
+
+            <p class="authSubtitle">
+                Manage your tiffin business
+            </p>
+
+
+            <input
+                id="name"
+                class="registerField"
+                placeholder="Your name"
+                autocomplete="name">
+
+
+            <input
+                id="email"
+                type="email"
+                placeholder="Email"
+                autocomplete="email">
+
+
+            <input
+                id="password"
+                type="password"
+                placeholder="Password"
+                autocomplete="current-password">
+
+
+            <button
+                class="primary full"
+                onclick="submitAuth()">
+                Continue
+            </button>
+
+
+            <p id="message"></p>
+
+
+            <button
+                class="textButton"
+                onclick="toggleAuth()"
+                id="toggleButton">
+                Don't have an account? Register
+            </button>
+
+
+            <button
+                class="textButton"
+                onclick="showLanding()">
+                ← Back to home
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         DASHBOARD
+    ====================================================== -->
+
+    <section id="dashboard" class="hidden">
+
+        <nav class="dashboardNav">
+
+            <div class="logo">
+                🍱 TiffinTrack
+            </div>
+
+
+            <div class="dashboardActions">
+
+                <button
+                    class="secondary"
+                    onclick="openReports()">
+                    📊 Reports
+                </button>
+
+                <button
+                    class="secondary"
+                    onclick="openDelivery()">
+                    🚚 Delivery
+                </button>
+
+                <button
+                    class="secondary"
+                    onclick="openProfile()">
+                    👤 Profile
+                </button>
+
+                <button
+                    class="secondary"
+                    onclick="toggleTheme()"
+                    id="themeButton">
+                    🌙
+                </button>
+
+                <button
+                    class="primary"
+                    onclick="openAddCustomer()">
+                    + Add Customer
+                </button>
+
+                <button
+                    class="logout"
+                    onclick="logout()">
+                    Logout
+                </button>
+
+            </div>
+
+        </nav>
+
+
+        <main class="dashboardMain">
+
+            <div class="welcome">
+
+                <div>
+
+                    <div class="tag">
+                        BUSINESS DASHBOARD
+                    </div>
+
+                    <h1>
+                        Customer Management
+                    </h1>
+
+                    <p>
+                        Track subscriptions, pauses,
+                        deliveries, transfers and billing.
+                    </p>
+
+                </div>
+
+
+                <div class="phoneSearch">
+
+                    <input
+                        id="phoneLookup"
+                        type="tel"
+                        placeholder="Search phone number..."
+                        maxlength="10"
+                        inputmode="numeric">
+
+                    <button
+                        class="secondary"
+                        onclick="searchByPhone()">
+                        🔎 Find
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- APPLICATION CLOCK -->
+
+            <div class="clockBar">
+
+                <div>
+
+                    <span>
+                        🕐 Application Date
+                    </span>
+
+                    <strong id="applicationClock">
+                        Loading...
+                    </strong>
+
+                </div>
+
+                <button
+                    class="secondary"
+                    onclick="runMorningNotifications()">
+                    🔔 Run Today's Notifications
+                </button>
+
+            </div>
+
+
+            <!-- STATS -->
+
+            <div class="stats">
+
+                <div class="statCard">
+
+                    <div class="statIcon">
+                        👥
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Customers
+                        </span>
+
+                        <strong id="total">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="statCard">
+
+                    <div class="statIcon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Active
+                        </span>
+
+                        <strong id="active">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="statCard">
+
+                    <div class="statIcon">
+                        ⏸
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Paused
+                        </span>
+
+                        <strong id="paused">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="statCard">
+
+                    <div class="statIcon">
+                        🍱
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Today's Delivery
+                        </span>
+
+                        <strong id="todayServed">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="statCard">
+
+                    <div class="statIcon">
+                        ₹
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Collected
+                        </span>
+
+                        <strong id="totalRevenue">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK ACTIONS -->
+
+            <div class="quickActions">
+
+                <button
+                    class="quickCard"
+                    onclick="openAddCustomer()">
+
+                    <span>➕</span>
+
+                    <div>
+
+                        <strong>
+                            Add Customer
+                        </strong>
+
+                        <small>
+                            Create new subscription
+                        </small>
+
+                    </div>
+
+                </button>
+
+
+                <button
+                    class="quickCard"
+                    onclick="openDelivery()">
+
+                    <span>🚚</span>
+
+                    <div>
+
+                        <strong>
+                            Today's Delivery
+                        </strong>
+
+                        <small>
+                            Mark lunch deliveries
+                        </small>
+
+                    </div>
+
+                </button>
+
+
+                <button
+                    class="quickCard"
+                    onclick="openReports()">
+
+                    <span>📈</span>
+
+                    <div>
+
+                        <strong>
+                            Monthly Reports
+                        </strong>
+
+                        <small>
+                            Revenue and billing
+                        </small>
+
+                    </div>
+
+                </button>
+
+
+                <button
+                    class="quickCard"
+                    onclick="loadReminders()">
+
+                    <span>🔔</span>
+
+                    <div>
+
+                        <strong>
+                            Payment Reminders
+                        </strong>
+
+                        <small>
+                            Check pending payments
+                        </small>
+
+                    </div>
+
+                </button>
+
+
+                <!-- NEW T4 IMPORT -->
+
+                <button
+                    class="quickCard"
+                    onclick="openImport()">
+
+                    <span>📥</span>
+
+                    <div>
+
+                        <strong>
+                            Import Customers
+                        </strong>
+
+                        <small>
+                            Import messy customer data
+                        </small>
+
+                    </div>
+
+                </button>
+
+            </div>
+                        <!-- CUSTOMER SECTION -->
+
+            <div class="customerSection">
+
+                <div class="sectionHeader">
+
+                    <div>
+
+                        <h2>
+                            Customers
+                        </h2>
+
+                        <p>
+                            Search and manage your tiffin subscribers.
+                        </p>
+
+                    </div>
+
+
+                    <div class="filters">
+
+                        <input
+                            id="search"
+                            placeholder="🔍 Search name or phone..."
+                            oninput="currentPage=1; loadCustomers()">
+
+
+                        <select
+                            id="status"
+                            onchange="currentPage=1; loadCustomers()">
+
+                            <option value="">
+                                All Status
+                            </option>
+
+                            <option value="ACTIVE">
+                                Active
+                            </option>
+
+                            <option value="PAUSED">
+                                Paused
+                            </option>
+
+                        </select>
+
+
+                        <select
+                            id="sort"
+                            onchange="currentPage=1; loadCustomers()">
+
+                            <option value="created_at">
+                                Newest
+                            </option>
+
+                            <option value="name">
+                                Name
+                            </option>
+
+                            <option value="monthly_price">
+                                Price
+                            </option>
+
+                            <option value="status">
+                                Status
+                            </option>
+
+                        </select>
+
+
+                        <button
+                            class="secondary"
+                            onclick="exportCustomers()">
+                            📥 Export
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="tableWrap">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Name</th>
+
+                                <th>Phone</th>
+
+                                <th>Monthly Plan</th>
+
+                                <th>Status</th>
+
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="customers"></tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div class="pagination">
+
+                    <button
+                        onclick="previousPage()">
+                        ← Previous
+                    </button>
+
+                    <span id="pageInfo">
+                        Page 1 of 1
+                    </span>
+
+                    <button
+                        onclick="nextPage()">
+                        Next →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- REMINDERS -->
+
+            <div
+                id="remindersSection"
+                class="customerSection hidden">
+
+                <div class="sectionHeader">
+
+                    <div>
+
+                        <h2>
+                            🔔 Payment Reminders
+                        </h2>
+
+                        <p>
+                            Customers with pending balances.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div
+                    id="reminders"
+                    class="remindersList">
+                </div>
+
+            </div>
+
+        </main>
+
+    </section>
+
+
+    <!-- =====================================================
+         ADD CUSTOMER MODAL
+    ====================================================== -->
+
+    <div
+        id="customerModal"
+        class="modal hidden">
+
+        <div class="modalBox">
+
+            <button
+                class="close"
+                onclick="closeModal()">
+                ×
+            </button>
+
+            <h2>
+                Add Customer
+            </h2>
+
+            <p>
+                Add a new tiffin subscriber.
+            </p>
+
+
+            <input
+                id="customerName"
+                type="text"
+                placeholder="Customer name"
+                maxlength="50">
+
+
+            <input
+                id="customerPhone"
+                type="tel"
+                placeholder="10-digit mobile number"
+                maxlength="10"
+                inputmode="numeric">
+
+
+            <input
+                id="customerAddress"
+                type="text"
+                placeholder="Address"
+                maxlength="150">
+
+
+            <input
+                id="customerPrice"
+                type="number"
+                placeholder="Monthly plan price"
+                min="1"
+                step="1">
+
+
+            <button
+                class="primary full"
+                onclick="addCustomer()">
+                Add Customer
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         CUSTOMER DETAILS
+    ====================================================== -->
+
+    <div
+        id="detailsModal"
+        class="modal hidden">
+
+        <div class="modalBox detailsBox">
+
+            <button
+                class="close"
+                onclick="closeDetails()">
+                ×
+            </button>
+
+            <div id="details"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         T6 TRANSFER MODAL
+    ====================================================== -->
+
+    <div
+        id="transferModal"
+        class="modal hidden">
+
+        <div class="modalBox">
+
+            <button
+                class="close"
+                onclick="closeTransfer()">
+                ×
+            </button>
+
+            <h2>
+                🔄 Transfer Subscription
+            </h2>
+
+            <p>
+                Transfer this subscription to another customer
+                during the current billing cycle.
+            </p>
+
+
+            <input
+                id="transferSubscriptionId"
+                type="hidden">
+
+
+            <input
+                id="transferCustomerId"
+                type="number"
+                placeholder="New customer ID">
+
+
+            <input
+                id="transferDate"
+                type="date">
+
+
+            <button
+                class="primary full"
+                onclick="transferSubscription()">
+                Confirm Transfer
+            </button>
+
+            <p id="transferMessage"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         PAYMENT MODAL
+    ====================================================== -->
+
+    <div
+        id="paymentModal"
+        class="modal hidden">
+
+        <div class="modalBox">
+
+            <button
+                class="close"
+                onclick="closePaymentModal()">
+                ×
+            </button>
+
+            <h2>
+                💳 Add Payment
+            </h2>
+
+            <p>
+                Record a payment received from this customer.
+            </p>
+
+
+            <input
+                id="paymentAmount"
+                type="number"
+                min="1"
+                step="1"
+                placeholder="Payment amount">
+
+
+            <select id="paymentMethod">
+
+                <option value="CASH">
+                    Cash
+                </option>
+
+                <option value="UPI">
+                    UPI
+                </option>
+
+                <option value="BANK">
+                    Bank Transfer
+                </option>
+
+                <option value="OTHER">
+                    Other
+                </option>
+
+            </select>
+
+
+            <input
+                id="paymentNote"
+                type="text"
+                maxlength="100"
+                placeholder="Note (optional)">
+
+
+            <button
+                class="primary full"
+                onclick="addPayment()">
+                Save Payment
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- PAYMENT HISTORY -->
+
+    <div
+        id="paymentHistoryModal"
+        class="modal hidden">
+
+        <div class="modalBox">
+
+            <button
+                class="close"
+                onclick="closePaymentHistory()">
+                ×
+            </button>
+
+            <h2>
+                📜 Payment History
+            </h2>
+
+            <p id="paymentHistoryCustomer">
+                Payment records
+            </p>
+
+            <div
+                id="paymentHistory"
+                class="paymentHistory">
+            </div>
+
+        </div>
+
+    </div>
+        <!-- =====================================================
+         T4 IMPORT MODAL
+    ====================================================== -->
+
+    <div
+        id="importModal"
+        class="modal hidden">
+
+        <div class="modalBox importBox">
+
+            <button
+                class="close"
+                onclick="closeImport()">
+                ×
+            </button>
+
+            <h2>
+                📥 Import Customers
+            </h2>
+
+            <p>
+                Import a CSV customer list. Duplicate phones,
+                mixed dates and invalid records will be handled
+                automatically.
+            </p>
+
+
+            <input
+                id="importFile"
+                type="file"
+                accept=".csv,text/csv">
+
+
+            <button
+                class="primary full"
+                onclick="importCustomers()">
+                Import Customer List
+            </button>
+
+
+            <div
+                id="importResult"
+                class="importResult">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         REPORTS MODAL
+    ====================================================== -->
+
+    <div
+        id="reportsModal"
+        class="modal hidden">
+
+        <div class="modalBox reportBox">
+
+            <button
+                class="close"
+                onclick="closeReports()">
+                ×
+            </button>
+
+            <h2>
+                📊 Monthly Reports
+            </h2>
+
+            <p>
+                View monthly delivery, billing and revenue summary.
+            </p>
+
+
+            <div class="reportFilters">
+
+                <select id="reportMonth">
+
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+
+                </select>
+
+
+                <input
+                    id="reportYear"
+                    type="number"
+                    min="2020"
+                    max="2100"
+                    placeholder="Year">
+
+
+                <button
+                    class="primary"
+                    onclick="loadReports()">
+                    Generate Report
+                </button>
+
+            </div>
+
+
+            <div
+                id="reportSummary"
+                class="reportSummary">
+            </div>
+
+
+            <div
+                id="reportCustomers"
+                class="reportCustomers">
+            </div>
+
+
+            <button
+                class="secondary full"
+                onclick="exportReport()">
+                📥 Export Report
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         DAILY DELIVERY MODAL
+    ====================================================== -->
+
+    <div
+        id="deliveryModal"
+        class="modal hidden">
+
+        <div class="modalBox deliveryBox">
+
+            <button
+                class="close"
+                onclick="closeDelivery()">
+                ×
+            </button>
+
+            <h2>
+                🚚 Today's Delivery
+            </h2>
+
+            <p id="deliveryDate">
+                Today's tiffin delivery list.
+            </p>
+
+
+            <div class="deliveryStats">
+
+                <div>
+
+                    <strong id="deliveryTotal">
+                        0
+                    </strong>
+
+                    <span>
+                        Total
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong id="deliveryDone">
+                        0
+                    </strong>
+
+                    <span>
+                        Delivered
+                    </span>
+
+                </div>
+
+
+                <div>
+
+                    <strong id="deliveryPending">
+                        0
+                    </strong>
+
+                    <span>
+                        Pending
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="deliveryList"
+                class="deliveryList">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         NOTIFICATION OUTBOX
+    ====================================================== -->
+
+    <div
+        id="outboxModal"
+        class="modal hidden">
+
+        <div class="modalBox">
+
+            <button
+                class="close"
+                onclick="closeOutbox()">
+                ×
+            </button>
+
+            <h2>
+                🔔 Notification Outbox
+            </h2>
+
+            <p>
+                Notifications generated by the Notification Service.
+            </p>
+
+            <div
+                id="outboxList"
+                class="outboxList">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         PROFILE
+    ====================================================== -->
+
+    <div
+        id="profileModal"
+        class="modal hidden">
+
+        <div class="modalBox">
+
+            <button
+                class="close"
+                onclick="closeProfile()">
+                ×
+            </button>
+
+            <h2>
+                👤 Profile & Settings
+            </h2>
+
+            <p>
+                Manage your TiffinTrack account.
+            </p>
+
+
+            <label>
+                Name
+            </label>
+
+            <input
+                id="profileName"
+                type="text"
+                placeholder="Your name"
+                maxlength="50">
+
+
+            <label>
+                Email
+            </label>
+
+            <input
+                id="profileEmail"
+                type="email"
+                placeholder="Email">
+
+
+            <button
+                class="primary full"
+                onclick="updateProfile()">
+                Save Profile
+            </button>
+
+
+            <hr>
+
+
+            <h3>
+                🔐 Change Password
+            </h3>
+
+
+            <input
+                id="currentPassword"
+                type="password"
+                placeholder="Current password">
+
+
+            <input
+                id="newPassword"
+                type="password"
+                placeholder="New password">
+
+
+            <input
+                id="confirmPassword"
+                type="password"
+                placeholder="Confirm new password">
+
+
+            <button
+                class="secondary full"
+                onclick="changePassword()">
+                Change Password
+            </button>
+
+
+            <p id="profileMessage"></p>
+
+        </div>
+
+    </div>
+        <!-- =====================================================
+         INVOICE MODAL
+    ====================================================== -->
+
+    <div
+        id="invoiceModal"
+        class="modal hidden">
+
+        <div class="modalBox invoiceBox">
+
+            <button
+                class="close"
+                onclick="closeInvoice()">
+                ×
+            </button>
+
+
+            <div
+                id="invoiceContent"
+                class="invoiceContent">
+            </div>
+
+
+            <div class="invoiceActions">
+
+                <button
+                    class="primary"
+                    onclick="printInvoice()">
+                    🖨️ Print Invoice
+                </button>
+
+                <button
+                    class="secondary"
+                    onclick="closeInvoice()">
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         PHONE SEARCH
+    ====================================================== -->
+
+    <div
+        id="phoneModal"
+        class="modal hidden">
+
+        <div class="modalBox">
+
+            <button
+                class="close"
+                onclick="closePhoneSearch()">
+                ×
+            </button>
+
+            <h2>
+                🔎 Customer Found
+            </h2>
+
+
+            <div
+                id="phoneResult"
+                class="phoneResult">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         CONTACT MODAL
+    ====================================================== -->
+
+    <div
+        id="contactModal"
+        class="modal hidden">
+
+        <div class="modalBox">
+
+            <button
+                class="close"
+                onclick="closeContact()">
+                ×
+            </button>
+
+            <h2>
+                📞 Contact Customer
+            </h2>
+
+
+            <div
+                id="contactCustomer"
+                class="contactCustomer">
+            </div>
+
+
+            <div class="contactButtons">
+
+                <a
+                    id="callCustomer"
+                    class="primary full"
+                    href="#">
+                    📞 Call Customer
+                </a>
+
+
+                <a
+                    id="whatsappCustomer"
+                    class="secondary full"
+                    href="#"
+                    target="_blank">
+                    💬 WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         GENERAL MESSAGE
+    ====================================================== -->
+
+    <div
+        id="messageModal"
+        class="modal hidden">
+
+        <div class="modalBox smallModal">
+
+            <button
+                class="close"
+                onclick="closeMessageModal()">
+                ×
+            </button>
+
+
+            <div
+                id="generalMessage"
+                class="generalMessage">
+            </div>
+
+
+            <button
+                class="primary full"
+                onclick="closeMessageModal()">
+                OK
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="dashboardFooter">
+
+        <div>
+            🍱 <strong>TiffinTrack</strong>
+        </div>
+
+        <div>
+            Home-style tiffin management made simple.
+        </div>
+
+        <div>
+            © 2026 TiffinTrack
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

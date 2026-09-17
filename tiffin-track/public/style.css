@@ -1,0 +1,1865 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f8fc;
+    color: #18202f;
+    transition: background 0.25s, color 0.25s;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+button,
+a {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.primary {
+    border: none;
+    background: #111827;
+    color: white;
+    padding: 11px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.secondary {
+    border: 1px solid #d8dce5;
+    background: white;
+    color: #18202f;
+    padding: 11px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.secondary:hover {
+    background: #f5f6f8;
+    transform: translateY(-1px);
+}
+
+.big {
+    padding: 15px 25px;
+}
+
+.full {
+    width: 100%;
+}
+
+.textButton {
+    border: none;
+    background: transparent;
+    color: #596273;
+    font-weight: 600;
+    padding: 8px;
+}
+
+.textButton:hover {
+    color: #111827;
+}
+
+.logout {
+    border: 1px solid #e1e4eb;
+    background: white;
+    padding: 11px 16px;
+    border-radius: 9px;
+    margin-left: 6px;
+    font-weight: 700;
+}
+
+.logout:hover {
+    background: #f3f4f6;
+}
+
+/* =========================================================
+   LANDING
+========================================================= */
+
+#landing {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 85% 15%, #ffe9d6 0, transparent 25%),
+        radial-gradient(circle at 10% 70%, #e7eaff 0, transparent 30%),
+        #fafbff;
+}
+
+.navbar {
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7%;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -0.5px;
+}
+
+.navButtons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero {
+    max-width: 1180px;
+    margin: auto;
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+    padding: 60px 30px;
+}
+
+.heroText {
+    max-width: 650px;
+}
+
+.tag {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 900;
+    color: #6b7280;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(44px, 6vw, 76px);
+    line-height: 0.98;
+    letter-spacing: -4px;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    display: block;
+    background: linear-gradient(90deg, #111827, #777f8f);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    color: #657083;
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 580px;
+}
+
+.heroButtons {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.heroCard {
+    width: 330px;
+    padding: 28px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #e8eaf0;
+    box-shadow: 0 25px 70px rgba(24, 32, 47, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.miniHeader {
+    display: flex;
+    justify-content: space-between;
+    color: #6d7481;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.overviewNumber {
+    font-size: 58px;
+    font-weight: 900;
+    margin-top: 35px;
+}
+
+.overviewText {
+    color: #777f8e;
+}
+
+.miniStats {
+    display: flex;
+    gap: 12px;
+    margin-top: 35px;
+}
+
+.miniStats div {
+    flex: 1;
+    padding: 15px;
+    background: #f5f6f9;
+    border-radius: 14px;
+}
+
+.miniStats strong {
+    display: block;
+    font-size: 24px;
+}
+
+.miniStats span {
+    font-size: 12px;
+    color: #737b8a;
+}
+
+/* =========================================================
+   LANDING FEATURES
+========================================================= */
+
+.features {
+    max-width: 1050px;
+    margin: 20px auto 100px;
+    padding: 0 25px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.feature {
+    padding: 28px;
+    background: white;
+    border: 1px solid #e8eaf0;
+    border-radius: 18px;
+    transition: 0.2s;
+}
+
+.feature:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(24, 32, 47, 0.08);
+}
+
+.featureIcon {
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.feature h3 {
+    margin-bottom: 10px;
+}
+
+.feature p {
+    color: #71798a;
+    line-height: 1.5;
+}
+
+.audience,
+.nextFeatures {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 100px;
+    padding: 0 25px;
+}
+
+.audience h2,
+.nextFeatures h2 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.audience p {
+    color: #707888;
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+.nextGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 35px;
+}
+
+.nextGrid div {
+    padding: 25px;
+    border-radius: 18px;
+    background: white;
+    border: 1px solid #e8eaf0;
+}
+
+.nextGrid h3 {
+    margin: 12px 0 8px;
+}
+
+.nextGrid p {
+    color: #747c8b;
+    font-size: 14px;
+}
+
+/* =========================================================
+   AUTH
+========================================================= */
+
+#auth {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background:
+        radial-gradient(circle at top left, #e8eaff, transparent 35%),
+        #f7f8fc;
+}
+
+.authBox {
+    width: 400px;
+    max-width: 100%;
+    background: white;
+    padding: 42px;
+    border-radius: 25px;
+    box-shadow: 0 25px 70px rgba(20, 25, 35, 0.1);
+    border: 1px solid #e7e9ee;
+    text-align: center;
+}
+
+.authLogo {
+    font-size: 40px;
+}
+
+.authBox h2 {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.authSubtitle {
+    color: #788091;
+    margin: 8px 0 25px;
+}
+
+.authBox input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #dfe3eb;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    outline: none;
+}
+
+.authBox input:focus,
+.modalBox input:focus,
+.modalBox select:focus,
+.filters input:focus,
+.filters select:focus,
+.phoneSearch input:focus {
+    border-color: #8c94a4;
+    box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.05);
+}
+
+.authBox .primary {
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+#message {
+    min-height: 20px;
+    color: #d04444;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+#dashboard {
+    min-height: 100vh;
+}
+
+.dashboardNav {
+    min-height: 75px;
+    padding: 12px 5%;
+    background: white;
+    border-bottom: 1px solid #e8eaf0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+.dashboardActions {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.dashboardMain {
+    max-width: 1250px;
+    margin: auto;
+    padding: 45px 25px;
+}
+
+.welcome {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+}
+
+.welcome h1 {
+    font-size: 38px;
+    letter-spacing: -1.5px;
+    margin-bottom: 8px;
+}
+
+.welcome p {
+    color: #747c8b;
+}
+
+/* =========================================================
+   APPLICATION CLOCK / T1
+========================================================= */
+
+.clockBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 16px 20px;
+    margin-bottom: 25px;
+    background: #111827;
+    color: white;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(17, 24, 39, 0.12);
+}
+
+.clockBar div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.clockBar span {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.clockBar strong {
+    font-size: 15px;
+}
+
+.clockBar .secondary {
+    background: white;
+    color: #111827;
+    border: none;
+}
+
+/* =========================================================
+   PHONE SEARCH
+========================================================= */
+
+.phoneSearch {
+    display: flex;
+    gap: 8px;
+    min-width: 320px;
+}
+
+.phoneSearch input {
+    width: 220px;
+    padding: 12px 14px;
+    border: 1px solid #dfe3eb;
+    border-radius: 10px;
+    outline: none;
+}
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.statCard {
+    background: white;
+    border: 1px solid #e6e9ef;
+    border-radius: 18px;
+    padding: 20px;
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    min-width: 0;
+    transition: 0.2s;
+}
+
+.statCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(20, 25, 35, 0.07);
+}
+
+.statIcon {
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    background: #f0f2f6;
+    font-size: 20px;
+}
+
+.statCard span {
+    display: block;
+    color: #777f8d;
+    font-size: 12px;
+}
+
+.statCard strong {
+    display: block;
+    font-size: 26px;
+    margin-top: 4px;
+}
+
+/* =========================================================
+   QUICK ACTIONS
+========================================================= */
+
+.quickActions {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    margin-bottom: 25px;
+}
+
+.quickCard {
+    border: 1px solid #e5e8ee;
+    background: white;
+    border-radius: 15px;
+    padding: 17px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    text-align: left;
+    transition: 0.2s;
+}
+
+.quickCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(20, 25, 35, 0.07);
+}
+
+.quickCard > span {
+    font-size: 25px;
+}
+
+.quickCard strong {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.quickCard small {
+    color: #7a8290;
+    font-size: 11px;
+}
+
+/* =========================================================
+   CUSTOMER SECTION
+========================================================= */
+
+.customerSection {
+    background: white;
+    border: 1px solid #e6e9ef;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.sectionHeader {
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #e9ebf0;
+}
+
+.sectionHeader h2 {
+    margin-bottom: 5px;
+}
+
+.sectionHeader p {
+    color: #777f8d;
+    font-size: 14px;
+}
+
+.filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filters input,
+.filters select {
+    padding: 11px 13px;
+    border: 1px solid #dfe3eb;
+    border-radius: 9px;
+    outline: none;
+    background: white;
+}
+
+.tableWrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th {
+    text-align: left;
+    background: #fafbfc;
+    color: #737b89;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+th,
+td {
+    padding: 18px 22px;
+    border-bottom: 1px solid #eef0f3;
+}
+
+td {
+    font-size: 14px;
+}
+
+tbody tr:hover {
+    background: #fafbfc;
+}
+/* =========================================================
+   STATUS
+========================================================= */
+
+.activeStatus,
+.pausedStatus {
+    display: inline-block;
+    padding: 6px 11px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.activeStatus {
+    background: #e9f7ef;
+    color: #19733c;
+}
+
+.pausedStatus {
+    background: #fff1df;
+    color: #9a5a00;
+}
+
+.badge {
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.badge.active {
+    background: #e9f7ef;
+    color: #19733c;
+}
+
+.badge.paused {
+    background: #fff1df;
+    color: #9a5a00;
+}
+
+/* =========================================================
+   SMALL BUTTON
+========================================================= */
+
+.small-btn {
+    border: 1px solid #dfe3e9;
+    background: white;
+    padding: 8px 13px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.small-btn:hover {
+    background: #f5f6f8;
+}
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.pagination {
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.pagination button {
+    border: 1px solid #dfe3e9;
+    background: white;
+    padding: 9px 14px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.pagination button:hover {
+    background: #f5f6f8;
+}
+
+.pagination span {
+    color: #687181;
+    font-size: 14px;
+}
+
+/* =========================================================
+   MODALS
+========================================================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(17, 24, 39, 0.52);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 20;
+    backdrop-filter: blur(3px);
+}
+
+.modalBox {
+    width: 500px;
+    max-width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: 22px;
+    padding: 35px;
+    position: relative;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+    animation: modalIn 0.2s ease;
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modalBox h2 {
+    font-size: 28px;
+    margin-bottom: 7px;
+}
+
+.modalBox h3 {
+    margin-bottom: 12px;
+}
+
+.modalBox > p {
+    color: #777f8d;
+    margin-bottom: 25px;
+}
+
+.modalBox input,
+.modalBox select {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 12px;
+    border: 1px solid #dfe3eb;
+    border-radius: 9px;
+    outline: none;
+    background: white;
+}
+
+.close {
+    position: absolute;
+    right: 18px;
+    top: 15px;
+    border: none;
+    background: transparent;
+    font-size: 28px;
+    color: #727987;
+    z-index: 2;
+}
+
+.close:hover {
+    color: #111827;
+}
+
+/* =========================================================
+   CUSTOMER DETAILS
+========================================================= */
+
+.detailsBox {
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.customerInfo {
+    margin-top: 20px;
+}
+
+.customerInfo p {
+    padding: 10px 0;
+    border-bottom: 1px solid #edf0f3;
+    color: #626b7a;
+}
+
+.customerInfo strong {
+    color: #18202f;
+}
+
+.detailGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.detailGrid p {
+    background: #f7f8fa;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.detailsBox hr {
+    border: none;
+    border-top: 1px solid #e8eaf0;
+    margin: 20px 0;
+}
+
+/* =========================================================
+   T6 TRANSFER
+========================================================= */
+
+#transferModal .modalBox {
+    border-top: 5px solid #111827;
+}
+
+#transferModal input[type="date"] {
+    cursor: pointer;
+}
+
+#transferMessage {
+    min-height: 20px;
+    margin-top: 12px;
+    color: #19733c;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* =========================================================
+   T4 IMPORT
+========================================================= */
+
+.importBox {
+    width: 620px;
+}
+
+.importBox input[type="file"] {
+    padding: 14px;
+    background: #f7f8fa;
+    cursor: pointer;
+}
+
+.importResult {
+    margin-top: 18px;
+    min-height: 10px;
+}
+
+.importSummary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.importCard {
+    padding: 15px;
+    border-radius: 12px;
+    background: #f6f7f9;
+    border: 1px solid #e5e8ee;
+    text-align: center;
+}
+
+.importCard strong {
+    display: block;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.importCard span {
+    color: #727b89;
+    font-size: 12px;
+}
+
+.importSuccess {
+    padding: 13px;
+    border-radius: 10px;
+    background: #e9f7ef;
+    color: #19733c;
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+.importError {
+    padding: 13px;
+    border-radius: 10px;
+    background: #fff0f0;
+    color: #b42323;
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+/* =========================================================
+   NOTIFICATION OUTBOX - T1
+========================================================= */
+
+.outboxList {
+    margin-top: 15px;
+}
+
+.outboxItem {
+    border: 1px solid #e5e8ee;
+    border-radius: 13px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #fafbfc;
+}
+
+.outboxItem strong {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.outboxItem p {
+    color: #626b79;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.outboxItem small {
+    display: block;
+    color: #858d9a;
+    margin-top: 8px;
+    font-size: 11px;
+}
+
+.outboxStatus {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 15px;
+    background: #eef2f6;
+    color: #596273;
+    font-size: 10px;
+    font-weight: 800;
+    margin-top: 8px;
+}
+
+/* =========================================================
+   BILL CARD
+========================================================= */
+
+.billBox {
+    margin-top: 20px;
+}
+
+.billCard {
+    margin-top: 15px;
+    background: #f6f7fa;
+    border-radius: 15px;
+    padding: 22px;
+}
+
+.billCard h2 {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.billCard p {
+    color: #6f7786;
+    margin-top: 8px;
+}
+
+.billGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.billGrid > div {
+    background: #f6f7f9;
+    padding: 13px;
+    border-radius: 10px;
+}
+
+.billGrid span {
+    display: block;
+    color: #747d8c;
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.billGrid strong {
+    font-size: 17px;
+}
+
+.paymentStatus {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    background: #eef2f6;
+    font-size: 13px;
+}
+
+.detailsActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+/* =========================================================
+   PAYMENT HISTORY
+========================================================= */
+
+.paymentHistory {
+    margin-top: 15px;
+}
+
+.paymentItem {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 5px;
+    padding: 15px;
+    border: 1px solid #e8eaf0;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    background: #fafbfc;
+}
+
+.paymentItem strong {
+    font-size: 17px;
+}
+
+.paymentItem span {
+    font-size: 12px;
+    color: #626b79;
+}
+
+.paymentItem small {
+    color: #808896;
+    font-size: 11px;
+}
+
+/* =========================================================
+   REPORTS
+========================================================= */
+
+.reportBox {
+    width: 750px;
+}
+
+.reportFilters {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.reportFilters input,
+.reportFilters select {
+    margin-bottom: 0;
+}
+
+.reportSummary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.reportCard {
+    background: #f6f7f9;
+    border: 1px solid #e8eaf0;
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.reportCard span {
+    display: block;
+    color: #747d8c;
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+
+.reportCard strong {
+    font-size: 22px;
+}
+
+.reportCustomers {
+    margin-bottom: 20px;
+}
+
+.reportCustomer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px;
+    border-bottom: 1px solid #edf0f3;
+    font-size: 14px;
+}
+
+/* =========================================================
+   DELIVERY
+========================================================= */
+
+.deliveryBox {
+    width: 650px;
+}
+
+.deliveryStats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.deliveryStats div {
+    text-align: center;
+    background: #f6f7f9;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.deliveryStats strong {
+    display: block;
+    font-size: 25px;
+}
+
+.deliveryStats span {
+    color: #747d8c;
+    font-size: 12px;
+}
+
+.deliveryList {
+    max-height: 430px;
+    overflow-y: auto;
+}
+
+.deliveryItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 14px;
+    border-bottom: 1px solid #edf0f3;
+}
+
+.deliveryItem strong,
+.deliveryItem small {
+    display: block;
+}
+
+.deliveryItem small {
+    color: #7b8391;
+    margin-top: 4px;
+}
+/* =========================================================
+   REMINDERS
+========================================================= */
+
+.remindersList {
+    padding: 20px;
+}
+
+.reminderItem {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border-bottom: 1px solid #edf0f3;
+}
+
+.reminderItem strong,
+.reminderItem small {
+    display: block;
+}
+
+.reminderItem small {
+    color: #7b8391;
+    margin-top: 4px;
+}
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+#profileModal label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    color: #626b79;
+    margin-bottom: 6px;
+}
+
+#profileModal hr {
+    border: none;
+    border-top: 1px solid #e8eaf0;
+    margin: 25px 0;
+}
+
+#profileMessage {
+    margin-top: 15px;
+    color: #19733c;
+    font-size: 13px;
+}
+
+/* =========================================================
+   INVOICE
+========================================================= */
+
+.invoiceBox {
+    width: 650px;
+}
+
+.invoiceContent {
+    background: white;
+}
+
+.invoiceHeader {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.invoiceHeader h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.invoiceHeader p {
+    color: #747d8c;
+}
+
+.invoiceCustomer {
+    margin: 20px 0;
+}
+
+.invoiceCustomer p {
+    margin-bottom: 7px;
+    font-size: 14px;
+}
+
+.invoiceTable {
+    border: 1px solid #e4e7ed;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.invoiceTable div {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 15px;
+    border-bottom: 1px solid #edf0f3;
+}
+
+.invoiceTable div:last-child {
+    border-bottom: none;
+}
+
+.invoiceTable span {
+    color: #6f7785;
+    font-size: 13px;
+}
+
+.invoiceTotal {
+    margin-top: 20px;
+    padding: 17px;
+    background: #f4f5f7;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+}
+
+.invoiceFooter {
+    text-align: center;
+    margin-top: 20px;
+    color: #7b8391;
+    font-size: 12px;
+}
+
+.invoiceActions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.invoiceActions button {
+    flex: 1;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contactCustomer {
+    background: #f6f7f9;
+    padding: 20px;
+    border-radius: 13px;
+    margin-bottom: 18px;
+}
+
+.contactCustomer h3 {
+    margin-bottom: 7px;
+}
+
+.contactCustomer p {
+    color: #6f7785;
+}
+
+.contactButtons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.contactButtons a {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+/* =========================================================
+   PHONE SEARCH
+========================================================= */
+
+.phoneResult {
+    background: #f6f7f9;
+    border-radius: 13px;
+    padding: 20px;
+}
+
+.phoneResult h3 {
+    margin-bottom: 12px;
+}
+
+.phoneResult p {
+    color: #687181;
+    margin-bottom: 8px;
+}
+
+.phoneResult .full {
+    margin-top: 15px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.dashboardFooter {
+    padding: 25px 5%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    border-top: 1px solid #e5e8ed;
+    color: #7b8390;
+    font-size: 12px;
+    background: white;
+}
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark {
+    background: #0f1117;
+    color: #f2f4f7;
+}
+
+body.dark #dashboard {
+    background: #0f1117;
+}
+
+body.dark .dashboardNav,
+body.dark .customerSection,
+body.dark .statCard,
+body.dark .quickCard,
+body.dark .dashboardFooter {
+    background: #171a22;
+    border-color: #292e39;
+}
+
+body.dark .welcome p,
+body.dark .sectionHeader p,
+body.dark .statCard span,
+body.dark .quickCard small {
+    color: #9ca5b5;
+}
+
+body.dark .secondary,
+body.dark .logout,
+body.dark .pagination button,
+body.dark .small-btn {
+    background: #171a22;
+    color: #f2f4f7;
+    border-color: #343a47;
+}
+
+body.dark .secondary:hover,
+body.dark .logout:hover,
+body.dark .small-btn:hover {
+    background: #222733;
+}
+
+body.dark .filters input,
+body.dark .filters select,
+body.dark .phoneSearch input {
+    background: #171a22;
+    color: #f2f4f7;
+    border-color: #343a47;
+}
+
+body.dark th {
+    background: #1c2029;
+    color: #9ca5b5;
+}
+
+body.dark td {
+    border-color: #292e39;
+}
+
+body.dark tbody tr:hover {
+    background: #1c2029;
+}
+
+body.dark .statIcon {
+    background: #222733;
+}
+
+body.dark .modalBox {
+    background: #171a22;
+    color: #f2f4f7;
+}
+
+body.dark .modalBox > p,
+body.dark .customerInfo p,
+body.dark .paymentItem span,
+body.dark .phoneResult p {
+    color: #a0a8b7;
+}
+
+body.dark .modalBox input,
+body.dark .modalBox select {
+    background: #11141b;
+    color: #f2f4f7;
+    border-color: #343a47;
+}
+
+body.dark .billGrid > div,
+body.dark .paymentItem,
+body.dark .reportCard,
+body.dark .deliveryStats div,
+body.dark .contactCustomer,
+body.dark .phoneResult,
+body.dark .invoiceTotal,
+body.dark .outboxItem,
+body.dark .importCard {
+    background: #20242e;
+    border-color: #343a47;
+}
+
+body.dark .billGrid span,
+body.dark .deliveryStats span,
+body.dark .reportCard span,
+body.dark .invoiceTable span,
+body.dark .outboxItem p,
+body.dark .importCard span {
+    color: #a0a8b7;
+}
+
+body.dark .invoiceTable {
+    border-color: #343a47;
+}
+
+body.dark .invoiceTable div,
+body.dark .detailsBox hr,
+body.dark #profileModal hr {
+    border-color: #343a47;
+}
+
+body.dark .dashboardFooter {
+    color: #9ca5b5;
+}
+
+body.dark .pagination span {
+    color: #a0a8b7;
+}
+
+body.dark .close {
+    color: #aeb6c4;
+}
+
+body.dark .clockBar {
+    background: #05070b;
+}
+
+body.dark .importBox input[type="file"] {
+    background: #11141b;
+    color: #f2f4f7;
+}
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f2f5;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c5cad3;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #aeb5c1;
+}
+
+body.dark ::-webkit-scrollbar-track {
+    background: #11141b;
+}
+
+body.dark ::-webkit-scrollbar-thumb {
+    background: #3a404c;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .quickActions {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 800px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    .hero p {
+        margin: auto;
+    }
+
+    .heroButtons {
+        justify-content: center;
+    }
+
+    .heroCard {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .features,
+    .nextGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboardNav {
+        padding: 12px 20px;
+        align-items: flex-start;
+    }
+
+    .dashboardActions {
+        gap: 5px;
+    }
+
+    .dashboardActions .secondary {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+
+    .dashboardActions .primary {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+
+    .logout {
+        display: none;
+    }
+
+    .welcome {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .phoneSearch {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .phoneSearch input {
+        width: 100%;
+    }
+
+    .clockBar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .clockBar button {
+        width: 100%;
+    }
+
+    .sectionHeader {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .filters input,
+    .filters select,
+    .filters button {
+        width: 100%;
+    }
+
+    .detailGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .reportSummary {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .reportFilters {
+        grid-template-columns: 1fr;
+    }
+
+    .deliveryStats {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .reminderItem {
+        grid-template-columns: 1fr;
+    }
+
+    .contactButtons {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboardFooter {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .importSummary {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .navbar {
+        height: auto;
+        padding: 18px 15px;
+    }
+
+    .navButtons .textButton {
+        display: none;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .hero {
+        padding: 40px 18px;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+        letter-spacing: -2.5px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .heroButtons {
+        flex-direction: column;
+    }
+
+    .heroButtons button {
+        width: 100%;
+    }
+
+    .features {
+        padding: 0 15px;
+    }
+
+    .audience,
+    .nextFeatures {
+        padding: 0 15px;
+    }
+
+    .audience h2,
+    .nextFeatures h2 {
+        font-size: 28px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .quickActions {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboardActions .secondary:nth-child(1),
+    .dashboardActions .secondary:nth-child(2) {
+        display: none;
+    }
+
+    .dashboardMain {
+        padding: 30px 15px;
+    }
+
+    .welcome h1 {
+        font-size: 30px;
+    }
+
+    .clockBar {
+        padding: 15px;
+    }
+
+    .clockBar div {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+    }
+
+    .modal {
+        padding: 12px;
+    }
+
+    .modalBox {
+        padding: 27px 20px;
+        border-radius: 18px;
+    }
+
+    .billGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .invoiceActions {
+        flex-direction: column;
+    }
+
+    .deliveryStats {
+        grid-template-columns: 1fr;
+    }
+
+    .reportSummary {
+        grid-template-columns: 1fr;
+    }
+
+    .importSummary {
+        grid-template-columns: 1fr;
+    }
+
+    .detailsActions {
+        flex-direction: column;
+    }
+
+    .detailsActions button {
+        width: 100%;
+    }
+
+    .paymentItem {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboardFooter {
+        padding: 20px 15px;
+    }
+}
